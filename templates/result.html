@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Post Extractor - Result</title>
+</head>
+<body>
+    <h1>Extracted Instagram Post</h1>
+    
+    <!-- Display the extracted image -->
+    <h2>Screenshot</h2>
+    <img src="{{ url_for('static', filename=image_path) }}" alt="Instagram Screenshot" width="500px">
+
+    <!-- Display the extracted text -->
+    <h2>Extracted Text</h2>
+    <p>{{ text }}</p>
+
+    <!-- Display sentiment score -->
+    <h2>Sentiment Analysis</h2>
+    <p>Sentiment Score: {{ sentiment }}</p>
+
+    <!-- Buttons to save data -->
+    <a href="{{ url_for('download_image', filename=image_path) }}">Download Image</a>
+    <a href="{{ url_for('download_excel', text=text) }}">Save as Excel</a>
+    <a href="{{ url_for('download_pdf', text=text) }}">Save as PDF</a>
+</body>
+</html>
